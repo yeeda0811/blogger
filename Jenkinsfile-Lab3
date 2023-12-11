@@ -5,7 +5,7 @@ pipeline{
     }
   }
   environment{
-    DOCKERHUB_CREDENTIALS = credentials('<your_credential_name>')
+    DOCKERHUB_CREDENTIALS = credentials('410977025-dockerhub')
   }
   options {
       skipDefaultCheckout(true)
@@ -40,8 +40,8 @@ pipeline{
     stage('Rename && Push image to Dockerhub'){
       steps{
         sh '''
-          docker tag  <your_job_name>_ci4_service:<your_tag> <your_DockerHUBID>/<your_job_name>_ci4_service:<your_tag>
-          docker push <your_DockerHUBID>/<your_job_name>_ci4_service:<your_tag>
+          docker tag  410977025_ci4_service:v0.0.1 410977025-dockerhub/410977025_ci4_service:<your_tag>
+          docker push 410977025-dockerhub/410977025_ci4_service:<your_tag>
         '''
       }
     }

@@ -4,7 +4,7 @@ services:
     ci4_service:
         build: .
         ports:
-            - 8080:80
+            - 8010:80
         working_dir: /app
         environment: 
             - WEB_DOCUMENT_ROOT=/app/public
@@ -20,11 +20,11 @@ services:
             MYSQL_DATABASE: example
             MYSQL_ROOT_PASSWORD: root
         ports:
-            - "3306:3306"
+            - "3006:3306"
     ci4_test_DB:
         image: mysql:5.7
         environment:
             MYSQL_DATABASE: example
             MYSQL_ROOT_PASSWORD: root
         ports:
-            - "3307:3306"
+            - "3301:3306"
