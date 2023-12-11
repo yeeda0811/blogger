@@ -40,8 +40,8 @@ pipeline{
     stage('Rename && Push image to Dockerhub'){
       steps{
         sh '''
-          docker tag  410977025_ci4_service:v0.0.1 410977025-dockerhub/410977025_ci4_service:<your_tag>
-          docker push 410977025-dockerhub/410977025_ci4_service:<your_tag>
+          docker tag  410977025_ci4_service:v0.0.1 410977025-dockerhub/410977025_ci4_service:v0.0.1
+          docker push 410977025-dockerhub/410977025_ci4_service:v0.0.1
         '''
       }
     }
